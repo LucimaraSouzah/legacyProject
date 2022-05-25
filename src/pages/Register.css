@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+.titleRegister {
+  font-size: 1.8em;
+  font-family: "Righteous", cursive;
+}
+
+.Register {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.RegisterBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  margin-bottom: 20px;
+}
+
+.divRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+div {
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.labelRow {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.left {
+  margin-left: 10px;
+}
+
+.RegisterBody .Input-body {
+  width: 100%;
+}
+
+.RegisterBody Button {
+  margin-top: 20px;
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back {
+  margin-right: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .divRow {
+    flex-direction: column;
+  }
+}

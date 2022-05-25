@@ -1,0 +1,28 @@
+.input-body {
+    margin: 10px 0px;
+    display: flex; 
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #463f3a;
+    border-radius: 20px;
+    padding: 2px;
+}
+
+.input {
+    flex: 1;
+    background-color: #463f3a;
+    height: 30px;
+    border: none;
+    outline: none;
+    color: #f4f3ee;
+}
+
+.input-body img {
+    padding: 5px;
+    width: 20px; 
+}
+
+path svg {
+    fill: #e0afa0;
+}
