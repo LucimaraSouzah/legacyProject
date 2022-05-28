@@ -5,3 +5,7 @@
   -webkit-backdrop-filter: blur(20px);
   border-radius: 10px;
 }
+
+div .App{
+  justify-content: center;
+}
