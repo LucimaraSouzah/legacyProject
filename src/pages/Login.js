@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../App.css";
 import "./Login.css";
 import Input from "../components/Input";
@@ -14,36 +14,28 @@ function Login() {
   function changePassword() {
     navigate("/password");
   }
-  // function enterHome() {
-  //   navigate("/home");
-  // }
 
-  const [user, setUser] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const history = useNavigate();
 
-  useEffect(() => {
-    if (localStorage.getItem("user-info")) {
+  async function logar(e) {
+    e.preventDefault();
+    let item = { username, password };
+    let result = await fetch(
+      "https://homolog-api.liberty-app.com/v1/auth/login/customer",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(item),
+      }
+    );
+    result = await result.json();
+    if (result.status == "success") {
       navigate("/home");
     }
-  }, []);
-
-  async function logar() {
-    console.warn(user,password)
-    console.log(user, password)
-    let item = { user, password };
-    let result = await fetch("localhost:3000/home/v1/auth/login/customer", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-      },
-      body: JSON.stringify(item),
-    });
-    result = await result.json()
-    localStorage.setItem("user-info",JSON.stringify(result))
-    navigate("/home")
-    console.log(result)
   }
 
   return (
@@ -56,9 +48,9 @@ function Login() {
         <main className="loginBody">
           <label>Login</label>
           <Input
-            id="user"
+            id="username"
             m1="./icons/person.svg"
-            onChange={(e) => setUser(e.target.value)}
+            onChange={(e) => setUsername(e.target.value)}
           />
           <label>Senha</label>
           <Input
@@ -69,7 +61,7 @@ function Login() {
           />
           <p onClick={changePassword}>Esqueceu sua senha?</p>
           <p onClick={handleClick}>Não possui cadastro? Crie uma conta</p>
-          <Button onClick={logar} text="Acessar" />
+          <Button prop={logar} text="Acessar" />
         </main>
       </form>
     </div>

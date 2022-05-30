@@ -39,6 +39,15 @@ form {
   align-items: center;
 }
 
+form div:nth-child(4) {
+  display: flex;
+}
+
+form div:nth-child(4) label {
+  align-self: center;
+  margin-right: 5px;
+}
+
 .labelRow {
   height: 100%;
   width: 20%;

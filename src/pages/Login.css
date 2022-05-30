@@ -1,7 +1,6 @@
 .loginBody {
   background: #463f3a55;
   box-shadow: 0 8px 32px 0 #312c29;
-  /* backdrop-filter: blur(20px); */
   -webkit-backdrop-filter: blur(20px);
   border-radius: 10px;
 }

@@ -1,4 +1,4 @@
-import React, { useState, Component } from "react";
+import React, { useState } from "react";
 import "../App.css";
 import "./Password.css";
 import Input from "../components/Input";
